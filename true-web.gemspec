@@ -2,6 +2,8 @@
 lib = File.expand_path('../lib/', __FILE__)
 $:.unshift lib unless $:.include?(lib)
 
+require 'rubygems'
+require 'bundler'
 require 'true-web/version'
 
 Gem::Specification.new do |s|
@@ -20,4 +22,5 @@ Gem::Specification.new do |s|
   s.files              = `git ls-files`.split("\n")
   s.test_files         = `git ls-files -- {test,spec,features}/*`.split("\n")
   s.require_paths      = ["lib"]
+  s.add_bundler_dependencies
 end
