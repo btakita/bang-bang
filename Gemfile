@@ -3,7 +3,7 @@ if respond_to? :source
   source "http://gems.github.com"
 end
 
-gemspec
+gemspec :name => "true-web"
 
 gem "activesupport", ">=3.0.0"
 gem "honkster-addressable", "2.2.3"
