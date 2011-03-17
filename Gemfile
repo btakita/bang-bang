@@ -5,6 +5,7 @@ end
 
 gem "activesupport", ">=3.0.0"
 gem "honkster-addressable", "2.2.3"
+gem "i18n", "0.5.0"
 gem "mustache", "0.99.2"
 gem "named-routes", "0.2.5"
 gem "sinatra", "1.2.0"

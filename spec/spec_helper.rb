@@ -19,10 +19,6 @@ require "capybara"
 require "capybara/dsl"
 require "nokogiri"
 require "addressable/uri"
-require 'warden'
-require 'warden/test/helpers'
-
-require "cache-store-api/test_cache"
 
 ARGV.push("-b")
 unless ARGV.include?("--format") || ARGV.include?("-f")

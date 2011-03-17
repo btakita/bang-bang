@@ -10,6 +10,7 @@ require 'active_support/all'
 require 'addressable/uri'
 require "named-routes"
 require "superhash"
+require "#{dir}/true-web/version"
 require "#{dir}/true-web/env_methods"
 
 module TrueWeb
