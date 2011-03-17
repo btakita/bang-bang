@@ -1,0 +1,1 @@
+<div class="authentication-index"></div>
