@@ -29,7 +29,7 @@ Gem::Specification.new do |s|
   s.add_dependency "sinatra", ">=1.2.0"
   s.add_dependency "yajl-ruby", ">=0.8.1"
 
-  r.add_development_dependency "capybara", ">=0.4.0"
+  s.add_development_dependency "capybara", ">=0.4.0"
   s.add_development_dependency "nokogiri", ">=1.4.4"
   s.add_development_dependency "rack-test", ">=0.5.6"
   s.add_development_dependency "rr", ">=1.0.2"
