@@ -14,7 +14,7 @@ Gem::Specification.new do |s|
   s.summary     = %q{A lightweight Sinatra web MVC stack}
   s.description = %q{A lightweight Sinatra web MVC stack}
 
-  s.required_rubygem:_version = ">= 1.3.6"
+  s.required_rubygem_version = ">= 1.3.6"
 
   # Man files are required because they are ignored by git
   s.files              = `git ls-files`.split("\n")
