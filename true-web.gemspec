@@ -14,7 +14,7 @@ Gem::Specification.new do |s|
   s.summary     = %q{A lightweight Sinatra web MVC stack}
   s.description = %q{A lightweight Sinatra web MVC stack}
 
-  s.required_rubygems_version = ">= 1.3.6"
+  s.required_rubygem:_version = ">= 1.3.6"
 
   # Man files are required because they are ignored by git
   s.files              = `git ls-files`.split("\n")
@@ -29,11 +29,11 @@ Gem::Specification.new do |s|
   s.add_dependency "sinatra", ">=1.2.0"
   s.add_dependency "yajl-ruby", ">=0.8.1"
 
-  s.add_development_dependency "capybara", ">=0.4.0"
-  s.add_development_dependency "nokogiri", "=>1.4.4"
-  s.add_development_dependency "rack-test", "=>0.5.6"
-  s.add_development_dependency "rr", "=>1.0.2"
-  s.add_development_dependency "rspec", "=>2.2.0"
-  s.add_development_dependency "ruby-debug19", "=>0.11.6"
-  s.add_development_dependency "webmock", "=>1.6.2"
+  r.add_development_dependency "capybara", ">=0.4.0"
+  s.add_development_dependency "nokogiri", ">=1.4.4"
+  s.add_development_dependency "rack-test", ">=0.5.6"
+  s.add_development_dependency "rr", ">=1.0.2"
+  s.add_development_dependency "rspec", ">=2.2.0"
+  s.add_development_dependency "ruby-debug19", ">=0.11.6"
+  s.add_development_dependency "webmock", ">=1.6.2"
 end
