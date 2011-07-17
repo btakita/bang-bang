@@ -1,6 +1,3 @@
-if respond_to? :source
-  source :gemcutter
-  source "http://gems.github.com"
-end
+source :gemcutter
 
 gemspec :name => "true-web"
