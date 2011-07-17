@@ -1,23 +1,18 @@
 require "rubygems"
-dir = File.dirname(__FILE__)
+require "bundler"
+Bundler.setup
 
+dir = File.dirname(__FILE__)
 $LOAD_PATH.unshift(File.expand_path("#{dir}/../lib"))
 
 require "rack/test"
 
 require "true-web"
 require "#{dir}/fixture-app/app"
-
-gem "nokogiri"
-gem "rack-test", "0.5.6"
-gem "capybara", "0.4.0"
-gem "honkster-addressable", "2.2.3"
-
 require "rack/session/abstract/id"
 require "rack/test"
 require "capybara"
 require "capybara/dsl"
-require "nokogiri"
 require "addressable/uri"
 
 ARGV.push("-b")

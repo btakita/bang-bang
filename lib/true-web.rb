@@ -2,7 +2,6 @@ dir = File.dirname(__FILE__)
 Dir[File.expand_path("#{dir}/../vendor/*/lib")].each do |path|
   $LOAD_PATH.unshift(path)
 end
-require 'nokogiri'
 require 'sinatra/base'
 require 'mustache'
 require 'yajl'
