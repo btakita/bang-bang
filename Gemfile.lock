@@ -11,7 +11,6 @@ PATH
 
 GEM
   remote: http://rubygems.org/
-  remote: http://gems.github.com/
   specs:
     activesupport (3.0.9)
     addressable (2.2.4)
