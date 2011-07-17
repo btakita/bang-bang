@@ -23,8 +23,7 @@ Gem::Specification.new do |s|
 
   s.add_dependency "activesupport", ">=3.0.0"
   s.add_dependency "honkster-addressable", ">=2.2.3"
-  s.add_dependency "i18n", ">=0.5.0"
-  s.add_dependency "mustache", ">=0.99.2"
+  s.add_dependency "mustache"
   s.add_dependency "named-routes", ">=0.2.5"
   s.add_dependency "sinatra", ">=1.2.0"
   s.add_dependency "yajl-ruby", ">=0.8.1"
