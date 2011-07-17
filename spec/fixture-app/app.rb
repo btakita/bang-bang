@@ -3,11 +3,13 @@ module FixtureApp
 
   def self.app
     @app ||= Rack::Builder.new do
+      use Rack::Logger
       run ::FixtureApp::Controller
     end.to_app
   end
 
   class Controller < ::TrueWeb::Controller
+    set :dump_errors, false
   end
 
   class Views < ::TrueWeb::Views

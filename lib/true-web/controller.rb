@@ -38,6 +38,9 @@ module TrueWeb
 
     error(500) do
       env["rack.exception"] = env["sinatra.error"]
+      if env["rack.logger"]
+        env["rack.logger"].error "#{env["sinatra.error"].message}\n#{env["sinatra.error"].backtrace.join("\n\t")}"
+      end
       "<div>Oops, an error occurred.</div>"
     end
 
