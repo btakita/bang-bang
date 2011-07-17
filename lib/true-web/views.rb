@@ -18,17 +18,13 @@ module TrueWeb
         {
           'data-template' => path,
           'data-type' => "Template"
-        }.only(*metadata_keys)
+        }
       end
 
       def define_method_via_include(method_name, &definition)
         include(Module.new do
           define_method(method_name, &definition)
         end)
-      end
-
-      def metadata_keys
-        ['data-template', 'data-type']
       end
     end
 

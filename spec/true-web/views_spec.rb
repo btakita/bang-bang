@@ -13,7 +13,17 @@ module TrueWeb
       describe "lazily created method" do
         context "when the presenter file exists" do
           it "evals the presenter file (which is responsible for adding the method)" do
-            pending "Testing"
+            authentication_path = "#{FixtureApp.root_dir}/services/authentication"
+            service = Service.new(authentication_path).init
+            app_instance = Object.new
+            stub(app_instance).services {[service]}
+            stub(app_instance).config {FixtureApp}
+            views = Class.new(TrueWeb::Views).new(app_instance)
+
+            html = views["/authentication/index.html.ms"].call("param1 value")
+            html.should include("param1 value")
+            doc = Nokogiri::HTML(html)
+            doc.at(".child-div").should be_present
           end
         end
 

@@ -24,3 +24,5 @@ FixtureApp.init(
   :named_routes => FixtureApp::Routes,
   :views_class => FixtureApp::Views
 )
+
+FixtureApp.register_service("#{File.dirname(__FILE__)}/services/authentication")
