@@ -37,6 +37,6 @@ Here is a good pattern to follow:
       end
     end
 
-Defining the route methods allows certain code editors & ides to locate the definition of action.
+Defining the route methods allows certain code editors & IDEs to locate the definition of action.
 
     uris.about_us # /about-us
