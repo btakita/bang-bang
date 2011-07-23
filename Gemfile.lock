@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    true-web (0.1.5)
+    bang-bang (0.1.5)
       activesupport (>= 2.0.0)
       honkster-addressable (>= 2.2.3)
       mustache
@@ -87,11 +87,11 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bang-bang!
   capybara (>= 0.4.0)
   i18n (>= 0.5.0)
   rack-test (>= 0.5.6)
   rr (>= 1.0.2)
   rspec (>= 2.2.0)
   ruby-debug19 (>= 0.11.6)
-  true-web!
   webmock (>= 1.6.2)

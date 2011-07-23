@@ -1,5 +1,5 @@
 module FixtureApp
-  include ::TrueWeb
+  include ::BangBang
 
   def self.app
     @app ||= Rack::Builder.new do
@@ -8,11 +8,11 @@ module FixtureApp
     end.to_app
   end
 
-  class Controller < ::TrueWeb::Controller
+  class Controller < ::BangBang::Controller
     set :dump_errors, false
   end
 
-  class Views < ::TrueWeb::Views
+  class Views < ::BangBang::Views
   end
 
   class Routes < NamedRoutes::Routes

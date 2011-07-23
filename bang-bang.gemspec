@@ -2,15 +2,15 @@
 lib = File.expand_path('../lib/', __FILE__)
 $:.unshift lib unless $:.include?(lib)
 
-require 'true-web/version'
+require 'bang-bang/version'
 
 Gem::Specification.new do |s|
-  s.name        = "true-web"
-  s.version     = ::TrueWeb::VERSION
+  s.name        = "bang-bang"
+  s.version     = ::BangBang::VERSION
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Brian Takita"]
   s.email       = ["btakita@truecar.com"]
-  s.homepage    = "https://github.com/TrueCar/true-web"
+  s.homepage    = "https://github.com/TrueCar/bang-bang"
   s.summary     = %q{A lightweight Sinatra web MVC stack}
   s.description = %q{A lightweight Sinatra web MVC stack}
 

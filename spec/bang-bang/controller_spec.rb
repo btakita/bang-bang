@@ -1,6 +1,6 @@
 require File.expand_path("#{File.dirname(__FILE__)}/../spec_helper")
 
-module TrueWeb
+module BangBang
   describe Controller do
     describe "GET /authentication/error-page" do
       context "when there is not a rack.logger" do

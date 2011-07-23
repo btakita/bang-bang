@@ -1,4 +1,4 @@
-module TrueWeb
+module BangBang
   module Plugins
     class Set
       attr_reader :config

@@ -1,4 +1,4 @@
-module TrueWeb
+module BangBang
   class Views
     delegate :cookies, :current_user, :logged_in_user, :request, :response, :uris, :env, :params, :services, :to => :app_instance
 

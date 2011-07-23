@@ -1,4 +1,4 @@
-module TrueWeb
+module BangBang
   module EnvMethods
     def development?
       rack_env == "development"

@@ -1,3 +1,3 @@
 source :gemcutter
 
-gemspec :name => "true-web"
+gemspec :name => "bang-bang"

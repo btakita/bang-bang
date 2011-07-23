@@ -1,4 +1,4 @@
-module TrueWeb
+module BangBang
   module Plugins
     module DirectoryFirstSort
       def directory_first_sort

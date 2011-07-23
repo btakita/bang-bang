@@ -1,4 +1,4 @@
-module TrueWeb
+module BangBang
   class Controller < Sinatra::Base
     set :raise_errors, false
     set :show_exceptions, false

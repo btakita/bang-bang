@@ -1,6 +1,6 @@
 require File.expand_path("#{File.dirname(__FILE__)}/../spec_helper")
 
-module TrueWeb
+module BangBang
   describe Service do
     describe "#get_static_file_path" do
       context "when the service has a file matching the given url" do

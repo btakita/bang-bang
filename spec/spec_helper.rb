@@ -7,7 +7,7 @@ $LOAD_PATH.unshift(File.expand_path("#{dir}/../lib"))
 
 require "rack/test"
 
-require "true-web"
+require "bang-bang"
 require "#{dir}/fixture-app/app"
 require "rack/session/abstract/id"
 require "rack/test"

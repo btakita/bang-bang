@@ -9,10 +9,10 @@ require 'active_support/all'
 require 'addressable/uri'
 require "named-routes"
 require "superhash"
-require "#{dir}/true-web/version"
-require "#{dir}/true-web/env_methods"
+require "#{dir}/bang-bang/version"
+require "#{dir}/bang-bang/env_methods"
 
-module TrueWeb
+module BangBang
   def self.included(mod)
     mod.extend(ClassMethods)
   end
@@ -22,7 +22,7 @@ module TrueWeb
     alias_method :uris, :named_routes
     delegate :define_routes, :to => :controller
 
-    include ::TrueWeb::EnvMethods
+    include ::BangBang::EnvMethods
 
     def init(params={})
       self.controller        = params[:controller] || raise(ArgumentError, "You must provide an :controller param")
@@ -81,7 +81,7 @@ module TrueWeb
     end
 
     def plugins
-      @plugins ||= ::TrueWeb::Plugins::Set.new(self)
+      @plugins ||= ::BangBang::Plugins::Set.new(self)
     end
 
     def lib_dir
@@ -124,7 +124,7 @@ module TrueWeb
   end
 end
 
-require "#{dir}/true-web/controller"
-require "#{dir}/true-web/service"
-require "#{dir}/true-web/views"
-require "#{dir}/true-web/plugins"
+require "#{dir}/bang-bang/controller"
+require "#{dir}/bang-bang/service"
+require "#{dir}/bang-bang/views"
+require "#{dir}/bang-bang/plugins"

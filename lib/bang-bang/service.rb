@@ -1,4 +1,4 @@
-module TrueWeb
+module BangBang
   class Service
     attr_reader :root_dir
     attr_accessor :url_prefix
@@ -89,7 +89,7 @@ module TrueWeb
       return [] unless File.directory?(public_javascripts_dir)
       glob = params[:glob] || "**/*.js"
       cache_buster = params.has_key?(:cache_bust) ? params[:cache_bust] : true
-      Dir["#{public_javascripts_dir}/#{glob}"].sort_by(&TrueWeb::Plugins::DirectoryFirstSort.directory_first_sort).map do |file|
+      Dir["#{public_javascripts_dir}/#{glob}"].sort_by(&BangBang::Plugins::DirectoryFirstSort.directory_first_sort).map do |file|
         asset_url(file, file.gsub(public_javascripts_dir, "#{url_prefix}/javascripts"), cache_buster)
       end
     end
@@ -99,7 +99,7 @@ module TrueWeb
       glob = params[:glob] || "**/[^_]*.css"
       cache_buster = params.has_key?(:cache_bust) ? params[:cache_bust] : true
       sass_glob = glob.gsub(/\.css$/, ".sass")
-      Dir["#{stylesheets_dir}/#{sass_glob}"].sort_by(&TrueWeb::Plugins::DirectoryFirstSort.directory_first_sort).map do |file|
+      Dir["#{stylesheets_dir}/#{sass_glob}"].sort_by(&BangBang::Plugins::DirectoryFirstSort.directory_first_sort).map do |file|
         asset_url(file, file.gsub(stylesheets_dir, "#{url_prefix}/stylesheets").gsub(/\.sass$/, ".css"), cache_buster)
       end
     end
@@ -116,7 +116,7 @@ module TrueWeb
           require file
         end
 
-        directory_first_sort = TrueWeb::Plugins::DirectoryFirstSort.directory_first_sort
+        directory_first_sort = BangBang::Plugins::DirectoryFirstSort.directory_first_sort
         (Dir["#{controllers_dir}/**/*.rb"] - module_files).sort_by(&directory_first_sort).each do |file|
           require file
         end
@@ -126,7 +126,7 @@ module TrueWeb
     def autoload_models
       models_dir = File.join(root_dir, "app/models")
       if File.directory?(models_dir)
-        directory_first_sort = TrueWeb::Plugins::DirectoryFirstSort.directory_first_sort
+        directory_first_sort = BangBang::Plugins::DirectoryFirstSort.directory_first_sort
         Dir["#{models_dir}/**/*.rb"].sort_by(&directory_first_sort).each do |file|
           const_name_parts = file.
             gsub(models_dir, "").
