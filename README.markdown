@@ -1,25 +1,25 @@
-# TrueWeb
+# BangBang
 
-TrueWeb is a lightweight Sinatra web VC stack. Currently, it doesn't have strong opinions, to allow flexibility to discover good idioms.
+BangBang is a lightweight Sinatra web VC stack. Currently, it doesn't have strong opinions, to allow flexibility to discover good idioms.
 
 ## Basic Layout
 
-TrueWeb has a basic app structure, similar to Rails.
+BangBang has a basic app structure, similar to Rails.
 Right now, no conventions are "forced" on you. This is done to allow experimentation and keep things lightweight.
 
 You pick the model library.
 
 Right now there are no generators.
 
-### TrueWeb::Controller
+### BangBang::Controller
 
-TrueWeb::Controller is a subclass of Sinatra::Base.
+BangBang::Controller is a subclass of Sinatra::Base.
 It's meant to provide an encapsulated unit of functionality within your app.
 How you group your actions is up to you.
 
 ### NamedRoutes
 
-TrueWeb uses the [named-routes](https://github.com/btakita/named-routes) library.
+BangBang uses the [named-routes](https://github.com/btakita/named-routes) library.
 
 Here is a good pattern to follow:
 
