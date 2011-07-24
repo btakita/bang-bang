@@ -18,27 +18,22 @@ module BangBang
   end
 
   module ClassMethods
-    attr_accessor :controller, :application_name, :named_routes, :stderr_dir, :stdout_dir, :root_dir, :views_class
+    attr_accessor :application_name, :named_routes, :stderr_dir, :stdout_dir, :root_dir, :views_class
     alias_method :uris, :named_routes
-    delegate :define_routes, :to => :controller
 
     include ::BangBang::EnvMethods
 
     def init(params={})
-      self.controller        = params[:controller] || raise(ArgumentError, "You must provide an :controller param")
       self.application_name   = params[:application_name] || raise(ArgumentError, "You must provide an :application_name param")
       self.root_dir          = params[:root_dir] || raise(ArgumentError, "You must provide a :root_dir param")
       self.named_routes       = params[:named_routes] || raise(ArgumentError, "You must provide a :named_routes param")
       self.views_class        = params[:views_class] || raise(ArgumentError, "You must provide a :views_class param")
-      self.controller.config = self
 
       plugins.init
     end
 
-    def app
-      @app ||= Rack::Builder.new do
-        run controller
-      end.to_app
+    def register_controller(controller)
+      controller.config = self
     end
 
     def register_service(path, &block)

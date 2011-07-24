@@ -11,6 +11,7 @@ module FixtureApp
   class Controller < ::BangBang::Controller
     set :dump_errors, false
   end
+  register_controller Controller
 
   class Views < ::BangBang::Views
   end
@@ -20,7 +21,6 @@ module FixtureApp
 end
 
 FixtureApp.init(
-  :controller => FixtureApp::Controller,
   :application_name => "fixture-app",
   :root_dir => File.dirname(__FILE__),
   :named_routes => FixtureApp::Routes,

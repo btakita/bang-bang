@@ -5,21 +5,8 @@ module BangBang
 
     class_inheritable_accessor :config
     extend(Module.new do
-      def uris
-        config.uris
-      end
-
-      def views_class
-        config.views_class
-      end
-
-      def path(*args, &block)
-        uris.path(*args, &block)
-      end
-
-      def services
-        config.services
-      end
+      delegate :uris, :views_class, :services, :to => :config
+      delegate :path, :to => :uris
     end)
 
     TEMPLATE_TYPE_NAME = "Template"
