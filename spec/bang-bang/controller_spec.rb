@@ -3,9 +3,13 @@ require File.expand_path("#{File.dirname(__FILE__)}/../spec_helper")
 module BangBang
   describe Controller do
     describe "GET /authentication/error-page" do
+      def uris
+        @uris ||= Authentication::Routes.instance
+      end
+
       context "when there is not a rack.logger" do
         it "responds with a 500" do
-          any_instance_of(FixtureApp::Controller) do |controller|
+          any_instance_of(Authentication::Controller) do |controller|
             stub.proxy(controller).env do |env|
               env.delete("rack.logger")
               env

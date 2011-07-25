@@ -3,18 +3,28 @@ module BangBang
     extend Concern
 
     module ClassMethods
-      attr_accessor :app_config, :named_routes, :root_dir, :views_class
-      alias_method :uris, :named_routes
+      attr_accessor :app_config, :root_dir
+      attr_writer :named_routes, :views_class
 
       include ::BangBang::EnvMethods
 
       def init(params={})
-        self.app_config = params[:app_config] || raise(ArgumentError, "You must provide an :app_config param")
-        self.root_dir = params[:root_dir] || raise(ArgumentError, "You must provide a :root_dir param")
-        self.named_routes = params[:named_routes] || raise(ArgumentError, "You must provide a :named_routes param")
-        self.views_class = params[:views_class] || raise(ArgumentError, "You must provide a :views_class param")
+        self.app_config = params[:app_config]
+        self.root_dir = params[:root_dir]
+        self.named_routes = params[:named_routes]
+        self.views_class = params[:views_class]
 
         plugins.init
+      end
+
+      def named_routes
+        @named_routes || (app_config && app_config.named_routes) || nil
+      end
+      alias_method :uris, :named_routes
+      alias_method :uris=, :named_routes=
+
+      def views_class
+        @views_class || (app_config && app_config.views_class) || nil
       end
 
       def register_controller(controller)
@@ -23,7 +33,7 @@ module BangBang
 
       def register_service(path, &block)
         unless service_dirs.include?(path)
-          service = Service.new(path)
+          service = Service.new(self, path)
           services << service
           service.init(&block)
         end

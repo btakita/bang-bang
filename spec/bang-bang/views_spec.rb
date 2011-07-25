@@ -14,7 +14,7 @@ module BangBang
         context "when the presenter file exists" do
           it "evals the presenter file (which is responsible for adding the method)" do
             authentication_path = "#{FixtureApp.root_dir}/services/authentication"
-            service = Service.new(authentication_path).init
+            service = Service.new(Object.new, authentication_path).init
             app_instance = Object.new
             stub(app_instance).services {[service]}
             stub(app_instance).config {FixtureApp}

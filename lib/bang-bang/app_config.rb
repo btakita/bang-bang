@@ -8,6 +8,9 @@ module BangBang
       attr_accessor :application_name, :stderr_dir, :stdout_dir
 
       def init(params={})
+        params[:root_dir] || raise(ArgumentError, "You must provide a :root_dir param")
+        params[:named_routes] || raise(ArgumentError, "You must provide a :named_routes param")
+        params[:views_class] || raise(ArgumentError, "You must provide a :views_class param")
         self.application_name = params[:application_name] || raise(ArgumentError, "You must provide an :application_name param")
         params[:app_config] = self
         super

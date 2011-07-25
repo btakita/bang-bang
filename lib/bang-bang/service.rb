@@ -1,23 +1,23 @@
 module BangBang
   class Service
-    attr_reader :root_dir
+    attr_reader :app_config, :root_dir
     attr_accessor :url_prefix
 
-    def initialize(dir)
+    def initialize(app_config, dir)
+      @app_config = app_config
       @root_dir = dir
     end
 
     def init
-      init_controllers
-      autoload_models
       append_load_paths
       eval_init_rb
+      init_controllers
+      autoload_models
       yield(self) if block_given?
       self
     end
 
     def append_load_paths
-      lib_dir = File.join(root_dir, "lib")
       $LOAD_PATH << lib_dir if File.directory?(lib_dir)
     end
 
@@ -146,6 +146,10 @@ module BangBang
     end
 
     protected
+    def lib_dir
+      File.join(root_dir, "lib")
+    end
+
     def asset_url(file, url_path, cache_buster)
       if cache_buster
         "#{url_path}?_cb=#{File.mtime(file).to_i}"

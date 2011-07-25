@@ -4,6 +4,7 @@ module FixtureApp
   def self.app
     @app ||= Rack::Builder.new do
       use Rack::Logger
+      use Authentication::Controller
       run ::FixtureApp::Controller
     end.to_app
   end
