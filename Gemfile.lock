@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    bang-bang (0.1.6)
+    bang-bang (0.2.0)
       activesupport (>= 2.0.0)
       honkster-addressable (>= 2.2.3)
       mustache

@@ -1,5 +1,5 @@
 module FixtureApp
-  include ::BangBang
+  include ::BangBang::AppConfig
 
   def self.app
     @app ||= Rack::Builder.new do
